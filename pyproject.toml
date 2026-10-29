@@ -1,0 +1,21 @@
+[project]
+name = "mandelbrot-mpi"
+version = "1.0.0"
+description = "Runs the MPI Mandelbrot on the hosts of hosts.txt and checks the machines"
+requires-python = ">=3.12"
+dependencies = [
+    "rich>=15.0.0",
+]
+
+[project.scripts]
+mandelbrot = "cluster.run:main"
+preflight = "cluster.preflight:main"
+specs = "cluster.specs:main"
+
+[build-system]
+requires = ["uv_build>=0.13,<0.14"]
+build-backend = "uv_build"
+
+[tool.uv.build-backend]
+module-name = "cluster"
+module-root = ""
